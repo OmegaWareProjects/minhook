@@ -73,10 +73,10 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)lib\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName).x86</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).x86</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName).x64</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName).x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">minhook.x86d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">minhook.x86</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">minhook.x64d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">minhook.x64</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -146,27 +146,27 @@
     <Lib />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\buffer.c" />
-    <ClCompile Include="..\..\src\HDE\hde32.c">
+    <ClCompile Include="..\src\buffer.c" />
+    <ClCompile Include="..\src\HDE\hde32.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\HDE\hde64.c">
+    <ClCompile Include="..\src\HDE\hde64.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\hook.c" />
-    <ClCompile Include="..\..\src\trampoline.c" />
+    <ClCompile Include="..\src\hook.c" />
+    <ClCompile Include="..\src\trampoline.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\MinHook.h" />
-    <ClInclude Include="..\..\src\buffer.h" />
-    <ClInclude Include="..\..\src\HDE\hde32.h" />
-    <ClInclude Include="..\..\src\HDE\hde64.h" />
-    <ClInclude Include="..\..\src\HDE\pstdint.h" />
-    <ClInclude Include="..\..\src\HDE\table32.h" />
-    <ClInclude Include="..\..\src\HDE\table64.h" />
-    <ClInclude Include="..\..\src\trampoline.h" />
+    <ClInclude Include="..\include\MinHook.h" />
+    <ClInclude Include="..\src\buffer.h" />
+    <ClInclude Include="..\src\HDE\hde32.h" />
+    <ClInclude Include="..\src\HDE\hde64.h" />
+    <ClInclude Include="..\src\HDE\pstdint.h" />
+    <ClInclude Include="..\src\HDE\table32.h" />
+    <ClInclude Include="..\src\HDE\table64.h" />
+    <ClInclude Include="..\src\trampoline.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
